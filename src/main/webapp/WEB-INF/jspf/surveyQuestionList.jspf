@@ -1,0 +1,80 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<div class="label inline">
+	<fmt:message key="jsp.surveyQuestionList.title" />
+</div>
+<input class="button addNewQuestion" type="button" id="addNewQuestion"
+	value="<fmt:message key="rm.survey.new.question.button.addNew"/>"
+	${not empty survey ? 'style="display:none"' : ''} />
+
+<div class="surveyQuestionListBox" id="surveyQuestionListBox">
+	<%@include file="/WEB-INF/jspf/surveyAddNewQuestionForm.jspf"%>
+	<%@include file="/WEB-INF/jspf/surveyEmptyQuestionBox.jspf"%>
+	<%@include file="/WEB-INF/jspf/surveyEditQuestionForm.jspf"%>
+
+	<c:set var="number" value="0" />
+	<c:forEach var="question" items="${questionList}">
+		<c:set var="number" value="${number + 1}" />
+		<div class="surveyQuestionBox" id="surveyQuestionBox${question.id}">
+			<div class="doubleColumnBox">
+				<div class="leftColumn">
+					<div class="number">${number}</div>
+				</div>
+				<div class="rightColumn">
+					<div class="dimensionBox">
+						<div class="label">
+							<fmt:message key="jsp.createSurvey.list.question.label.type" />
+						</div>
+						<div class="dimension">
+							<fmt:message key="${question.dimension.key}" />
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<c:forEach var="locale" items="${locales}">
+				<c:set var="text" value="${question.questionText.get(locale)}"></c:set>
+				<div class="doubleColumnBox questionText">
+					<div class="leftColumn">
+						<div class="nameLabel">
+							<fmt:message key="jsp.createSurvey.list.question.label.name" />
+							<div class="languageName">(${locale})</div>
+						</div>
+						<div class="name" id="name${locale}${question.id}">${text.name}</div>
+						<div class="descriptionLabel">
+							<fmt:message
+								key="jsp.createSurvey.list.question.label.description.satisfaction" />
+							<div class="languageName">(${locale})</div>
+						</div>
+						<div class="description"
+							id="satisfactionText${locale}${question.id}">${text.satisfactionText}</div>
+					</div>
+					<div class="rightColumn">
+						<div class="nameLabel">&nbsp;</div>
+						<div class="descriptionLabel">
+							<fmt:message
+								key="jsp.createSurvey.list.question.label.description.prioritization" />
+							<div class="languageName">(${locale})</div>
+						</div>
+						<div class="description"
+							id="prioritizationText${locale}${question.id}">${text.prioritizationText}</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</c:forEach>
+
+			<div class="rightAlign">
+				<input class="button" onclick="editQuestion(${question.id})"
+					type="button"
+					value="<fmt:message 
+										key="jsp.createSurvey.list.question.button.edit" />" />
+				<input class="button" onclick="deleteQuestion(${question.id})"
+					type="button"
+					value="<fmt:message 
+										key="jsp.createSurvey.list.question.button.delete" />" />
+			</div>
+		</div>
+	</c:forEach>
+</div>

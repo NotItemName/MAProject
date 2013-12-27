@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="false"
+	xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Encoding" value="Cp866" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p] %-40.40c | %m%n" />
+		</layout>
+	</appender>
+	<appender name="FileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.home}/logs/MotivationAssessment/MotivationAssessment.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="[%-5p] %-40.40c | %m%n" />
+		</layout>
+	</appender>
+	<appender name="OrganizationImportAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="File"
+			value="${catalina.home}/logs/MotivationAssessment/OrganizationStructureImport.log" />
+		<param name="MaxFileSize" value="50kB" />
+		<param name="MaxBackupIndex" value="1" />
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="[%d{dd/MM/yyyy HH:mm:ss}] [%-5p] [%c{-4}] - %m%n" />
+		</layout>
+	</appender>
+	<root>
+		<priority value="TRACE" />
+		<appender-ref ref="ConsoleAppender" />
+		<appender-ref ref="FileAppender" />
+	</root>
+	<logger name="org.springframework">
+		<level value="off" />
+	</logger>
+	<logger name="com.epam.preprod.ma.filter">
+		<level value="INFO" />
+	</logger>
+	<logger name="com.epam.preprod.ma.bean.DetailedChartBean">
+		<level value="ERROR" />
+	</logger>
+	<logger name="com.epam.preprod.ma.bean.MotivationMapBean">
+		<level value="ERROR" />
+	</logger>
+	<logger name="com.epam.preprod.ma.bean.RowBean">
+		<level value="DEBUG" />
+	</logger>
+	<logger name="com.epam.preprod.ma.controller.FileUploadController">
+		<level value="INFO" />
+		<appender-ref ref="OrganizationImportAppender" />
+	</logger>
+	<logger name="com.epam.preprod.ma.updater.UpdaterInvoker">
+		<level value="INFO" />
+		<appender-ref ref="OrganizationImportAppender" />
+	</logger>
+	<logger name="com.epam.preprod.ma.updater.TsvUpdater">
+		<level value="INFO" />
+		<appender-ref ref="OrganizationImportAppender" />
+	</logger>
+</log4j:configuration>

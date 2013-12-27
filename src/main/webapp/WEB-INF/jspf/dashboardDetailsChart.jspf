@@ -1,0 +1,3 @@
+<div id="detailsChartBox">
+	<div class="canvas" id="detailsChart"></div>
+</div>

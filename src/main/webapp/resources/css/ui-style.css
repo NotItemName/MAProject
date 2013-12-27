@@ -1,0 +1,837 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 10px;
+	font-family: Georgia, Arial, serif;
+	font-size: 100%;
+	background-color: #fff;
+}
+
+div .clear {
+	clear: both;
+}
+
+div .languageName {
+	color: #069;
+	display: inline-block;
+}
+
+.locale_ref {
+	cursor: pointer;
+	color: #069;
+	float: right;
+	text-decoration: underline;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/* HEADER */
+.header {
+	padding: 0;
+	height: 100px;
+}
+
+.header .logo {
+	background-color: #069;
+	width: 250px;
+	height: 93px;
+	margin: 0;
+	float: left;
+	background-repeat: no-repeat;
+}
+
+.header .title {
+	color: #069;
+	font-size: 150%;
+	float: left;
+	margin-left: 20px;
+	margin-top: 35px;
+}
+
+.header .userInfo {
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+.header .userInfo .avatar {
+	float: left;
+	height: 32px;
+	width: 32px;
+}
+
+.header .userInfo .avatar img {
+	height: 32px;
+	width: 32px;
+}
+
+.header .userInfo .name {
+	float: left;
+	margin: 10px 10px 0 10px;
+}
+
+.header .userInfo .logOut {
+	float: left;
+	margin: 10px 0 0 0;
+}
+
+.header .userInfo .logOut a {
+	color: #069;
+}
+
+/* NAVIGATION */
+.tabs {
+	position: relative;
+	float: right;
+	clear: both;
+	margin: -1em 10px 5px 0;
+	margin-top:;
+}
+
+.tab {
+	float: left;
+}
+
+.tab a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #069;
+	background: #ddd;
+	padding: 5px 20px;
+	border: 1px solid #069;
+	margin-left: -1px;
+	position: relative;
+	background: #bde;
+}
+
+.tab a:HOVER {
+	background-color: #def;
+}
+
+.tab .selected {
+	background: #fff;
+	border-bottom: 1px solid white;
+	z-index: 2;
+	color: #000;
+}
+
+/* CONTENT */
+.content {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	border-top: 1px solid #069;
+	clear: both;
+}
+
+/* LEFT BOX */
+.leftBox {
+	float: left;
+	width: 250px;
+	margin-top: 5px;
+	border-right: 1px solid #069;
+}
+
+.leftBox .label {
+	margin-top: 15px;
+	font-size: 125%;
+}
+
+.leftBox .surveysBox {
+	margin-top: 5px;
+	margin-right: 5px;
+	height: 200px;
+	overflow-y: scroll;
+	border: 1px solid #9cd;
+}
+
+.leftBox .surveysBox .survey {
+	margin-top: 5px;
+}
+
+.leftBox .surveysBox .survey .name {
+	display: inline-block;
+}
+
+.leftBox .subordinatesBox {
+	margin-top: 5px;
+	margin-right: 5px;
+	border: 1px solid #9cd;
+	clear: both;
+}
+
+.leftBox .subordinatesBox .tab {
+	float: left;
+	width: 20px;
+	height: 1px;
+}
+
+.leftBox .subordinatesBox .level0>.subordinate,#popupTextBox .subordinatesBox .level0>.subordinate
+	{
+	padding-left: 0px;
+}
+
+.leftBox .subordinatesBox .subordinate,#popupTextBox .subordinatesBox .subordinate
+	{
+	padding-left: 30px;
+	clear: both;
+}
+
+.leftBox .subordinatesBox .subordinate .checkbox,#popupTextBox .subordinatesBox .subordinate .checkbox
+	{
+	float: left;
+	display: block;
+}
+
+.leftBox .subordinatesBox .subordinate .name,#popupTextBox .subordinatesBox .subordinate .name
+	{
+	float: left;
+}
+
+/* RIGHT BOX */
+.rightBox {
+	margin-top: 5px;
+	margin-left: 250px;
+	padding-left: 5px;
+	border-left: 1px solid #069;
+}
+
+.rightBox .label {
+	margin-top: 15px;
+	font-size: 125%;
+}
+
+.rightBox .label .detailsButton {
+	display: inline-block;
+	cursor: pointer;
+	width: 25px;
+	background-color: #bde;
+	color: #069;
+	text-align: center;
+}
+
+/* SINGLE BOX */
+.singleBox .loginFormBox {
+	margin-top: 150px;
+	font-weight: normal;
+	text-align: center;
+}
+
+.singleBox .loginFormBox .button {
+	margin-top: 10px;
+}
+
+/* SATISFACTION SURVEY */
+.singleBox {
+	margin-top: 5px;
+	font-weight: normal;
+}
+
+.singleBox .label {
+	margin-top: 15px;
+	font-size: 125%;
+}
+
+.singleBox .label.inline {
+	display: inline-block;
+}
+
+
+.singleBox .surveyDescription {
+	margin-top: 15px;
+	font-size: 125%;
+	font-style: italic;
+}
+
+.questionBox {
+	background-color: #def;
+	padding: 10px;
+	margin: 5px 0 5px 0;
+}
+
+.questionBox .number {
+	background-image: url("../images/questionNumber.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	color: #fff;
+	font-size: 125%;
+	font-style: italic;
+	text-align: center;
+	line-height: 32px;
+	display: inline-block;
+}
+
+.questionBox .name {
+	font-size: 100%;
+	display: inline-block;
+}
+
+.questionBox .radioBox {
+	float: right;
+	background-color: #ade;
+	padding: 10px;
+}
+
+.questionBox .radio {
+	display: inline-block;
+	width: 30px;
+	text-align: center;
+}
+
+.questionBox .value {
+	color: #069;
+}
+
+/* PRIORITIZATION SURVEY */
+.questionBox .moneyBox {
+	float: right;
+	background-color: #ade;
+	padding: 10px;
+}
+
+.questionBox .moneyBox .value {
+	display: inline-block;
+}
+
+.questionBox .moneyBox .value .coin {
+	display: inline-block;
+	text-align: center;
+	width: 15px;
+}
+
+.questionBox .moneyBox .value .emptyCoin {
+	display: inline-block;
+	width: 15px;
+}
+
+.budgetBox {
+	background-color: #def;
+	padding: 10px;
+	margin: 5px 0 5px 0;
+}
+
+.budgetBox .label {
+	font-size: 100%;
+	display: inline-block;
+	margin: 0;
+	padding: 5px 10px;
+	color: #fff;
+	background-color: #6ac;
+}
+
+.budgetBox .value {
+	display: inline-block;
+}
+
+.budgetBox .value .coin {
+	display: inline-block;
+	text-align: center;
+	width: 15px;
+}
+
+.budgetBox .value .emptyCoin {
+	display: inline-block;
+	width: 15px;
+}
+
+/* CREATE SURVEY */
+.surveyFormBox {
+	border-bottom: 1px solid #069;
+	padding-bottom: 5px;
+}
+
+.surveyFormBox .surveyName {
+	float: left;
+}
+
+.surveyFormBox .surveyName .labels {
+	float: left;
+}
+
+.surveyFormBox .surveyName .labels .label {
+	margin: 2px;
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+}
+
+.surveyFormBox .surveyName .inputs {
+	float: left;
+}
+
+.surveyFormBox .surveyName .inputs .input {
+	margin: 2px;
+	padding: 3px;
+	height: 1em;
+	font-size: 100%;
+	width: 150px;
+	display: block;
+	border: 1px solid #069;
+	background-color: #fff;
+}
+
+.surveyFormBox .surveyName .inputs .input.disabled {
+	border-color: #aaa;
+	background-color: #eee;
+}
+
+.surveyFormBox .surveyDate {
+	float: left;
+	margin-left: 10px;
+}
+
+.surveyFormBox .surveyDate .label {
+	margin: 2px;
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	float: left;
+}
+
+.surveyFormBox .surveyDate .input {
+	margin: 2px;
+	padding: 3px;
+	height: 1em;
+	font-size: 100%;
+	width: 100px;
+	float: left;
+	border: 1px solid #069;
+	background-color: #fff;
+	border: 1px solid #069;
+	cursor: pointer;
+}
+
+.surveyFormBox .surveyDate .input.disabled {
+	border-color: #aaa;
+	background-color: #eee;
+}
+
+.surveyFormBox .surveyDate .dateSeparator {
+	margin: 2px;
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	text-align: center;
+	width: 15px;
+	float: left;
+}
+
+.surveyFormBox .surveyButtons {
+	float: right;
+}
+
+.surveyFormBox .surveyButtons .button {
+	display: block;
+	margin: 5px;
+}
+
+.surveyFormBox .surveyStatus {
+	float: right;
+	margin-right: 10px;
+}
+
+.surveyFormBox .surveyStatus .label {
+	margin: 2px;
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	text-align: center;
+}
+
+.surveyFormBox .surveyStatus .value {
+	margin: 2px;
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	color: #069;
+}
+
+.surveyFormBox .surveyLink .label {
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	display: inline;
+}
+
+.surveyFormBox .surveyLink .value {
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	display: inline;
+}
+
+.surveyFormBox .surveyLink .value .link {
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	display: inline;
+	color: #069;
+}
+
+.surveyFormBox .surveyLink .value .link:visited {
+	color: #069;
+}
+
+.surveyFormBox .surveyLink .value .link:hover {
+	color: #ade;
+}
+
+.surveyDescriptionsForm {
+	border-bottom: 1px solid #069;
+	padding-bottom: 5px;
+}
+
+.doubleColumnBox {
+	clear: both;
+}
+
+.doubleColumnBox .leftColumn {
+	float: left;
+	width: 49%;
+}
+
+.doubleColumnBox .rightColumn {
+	float: right;
+	width: 49%;
+}
+
+.textAreaBox {
+	background-color: #def;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+.textAreaBox .label {
+	margin: 0;
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+}
+
+.textAreaBox .textArea {
+	height: 3em;
+	width: 100%;
+	font-size: 100%;
+	font-family: inherit;
+	color: #069;
+	display: block;
+	border: 0;
+	background-color: #f2f9ff;
+}
+
+.textAreaBox .textArea.disabled {
+	background-color: #eeeeee;
+	color: #555;
+}
+
+.surveyAddQuestionForm {
+	background-color: #def;
+	margin-top: 5px;
+	padding: 5px;
+}
+
+.surveyQuestionListBox .surveyQuestionBox {
+	background-color: #def;
+	margin-top: 20px;
+	padding: 5px;
+}
+
+.surveyQuestionListBox .surveyQuestionBox .nameLabel {
+	color: #069;
+	display: inline-block;
+	margin: 3px 3px 20px 3px;
+}
+
+.surveyQuestionListBox .surveyQuestionBox .name {
+	display: inline-block;
+	margin: 3px 3px 20px 3px;
+	font-style: italic;
+	font-size: 80%;
+}
+
+.surveyQuestionListBox .surveyQuestionBox .descriptionLabel {
+	color: #069;
+	margin: 3px;
+}
+
+.surveyQuestionListBox .surveyQuestionBox .description {
+	margin: 10px 3px;
+	font-style: italic;
+	font-size: 80%;
+}
+
+.surveyQuestionListBox .surveyQuestionBox .questionText {
+	padding: 2px;
+	margin: 5px 0;
+	background-color: #f2f9ff;
+}
+
+.surveyQuestionListBox .surveyQuestionBox .number {
+	background-image: url("../images/questionNumber.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	color: #fff;
+	font-size: 125%;
+	font-style: italic;
+	text-align: center;
+	line-height: 32px;
+	display: inline-block;
+}
+
+.surveyQuestionListBox .dimensionBox {
+	
+}
+
+.surveyQuestionListBox .dimensionBox .label {
+	margin: 0;
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	display: inline-block;
+}
+
+.surveyQuestionListBox .dimensionBox .dimension {
+	margin: 0;
+	padding: 4px;
+	height: 1em;
+	font-size: 100%;
+	display: inline-block;
+	color: #069;
+}
+
+.surveyQuestionListBox .dimensionBox .dimension .dimensionSelect {
+	font-size: inherit;
+	font-family: inherit;
+	color: #069;
+}
+
+.button.addNewQuestion {
+	float: right;
+	margin-top: 15px;
+}
+
+.surveyQuestionListBox .surveyAddQuestionForm .questionText {
+	padding: 2px;
+	margin: 5px 0;
+	background-color: #f2f9ff;
+}
+
+.surveyQuestionListBox .surveyAddQuestionForm .nameLabel {
+	color: #069;
+	display: inline-block;
+	margin: 3px 3px 20px 3px;
+}
+
+.surveyQuestionListBox .surveyAddQuestionForm .nameInput {
+	display: inline-block;
+	margin: 3px 3px 3px 3px;
+	font-style: italic;
+	font-size: 80%;
+}
+
+.surveyQuestionListBox .surveyAddQuestionForm .nameInput .input {
+	width: 250px;
+	font-family: inherit;
+	font-style: italic;
+}
+
+.surveyQuestionListBox .surveyAddQuestionForm .descriptionLabel {
+	color: #069;
+	margin: 3px;
+}
+
+.surveyQuestionListBox .surveyAddQuestionForm .descriptionInput .textArea
+	{
+	height: 3em;
+	width: 100%;
+	font-size: 80%;
+	font-family: inherit;
+	font-style: italic;
+	display: block;
+	border: 0;
+	background-color: #fff;
+}
+
+/* POP UP */
+.popupBackground {
+	background-color: #000;
+	position: absolute;
+	display: none;
+	z-index: 99;
+}
+
+.popupBox {
+	padding: 10px;
+	background-color: #fff;
+	position: absolute;
+	display: none;
+	z-index: 100;
+}
+
+.popupBox .text {
+	margin: 10px;
+	color: #069;
+	font-style: italic;
+}
+
+.popupBox .button {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+/* BUTTONS */
+a.button,input.button {
+	background-color: #ade;
+	color: #069;
+	text-decoration: none;
+	font-style: italic;
+	font-weight: bold;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 4px 10px;
+	display: inline-block;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	border: 0;
+}
+
+.moneyButton {
+	padding: 3px !important;
+	width: 30px;
+	background-color: #def !important;
+}
+
+.moneyButton:HOVER {
+	background-color: #fff !important;
+}
+
+a.button:HOVER,input.button:HOVER {
+	background-color: #dee;
+	cursor: pointer;
+}
+
+.rightAlign {
+	text-align: right;
+}
+
+.canvas {
+	height: 400px;
+	margin-right: 255px;
+	padding-right: 5px;
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.errorInput {
+	border: 1px solid #f00 !important;
+}
+
+.errorLogTitle {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.errorLogTable {
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+}
+
+.errorLogTable td {
+	border: 1px solid #069;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+
+.logMessage {
+	text-align: left;
+}
+
+.pagination {
+	margin-left: 5%;
+	cursor: pointer;
+	font-size: 18px;
+	color: #069;
+}
+
+.paginationPage {
+	text-decoration: underline;
+	padding: 5px 5px 5px 5px;
+}
+
+.paginationDots {
+	padding: 5px 5px 5px 5px;
+}
+
+.paginationPageCurrent {
+	font-size: 22px;
+	color: #547223;
+	padding: 5px 5px 5px 5px;
+}
+
+/* CANVAS CONTROLS */
+.controls {
+	float: right;
+	width: 250px;
+	height: 400px;
+}
+
+.controls .top {
+	height: 100px;
+	overflow: auto;
+}
+
+.controls .bottom {
+	margin-top: 10px;
+	height: 290px;
+	overflow: auto;
+}
+
+.checkboxBox {
+	display: block;
+}
+
+.checkboxBox .checkbox {
+	display: inline;
+}
+
+.checkboxBox .name {
+	display: inline;
+}
+
+.errorMessage {
+	color: #A00;
+	font-size: 115%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.infoMessage {
+	color: #069;
+	font-size: 115%;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.center {
+	margin-top: 200px;
+	text-align: center;
+}
+
+.formContent {
+	display: inline-block;
+}
+
+.formContent input {
+	margin-right: 10px;
+}

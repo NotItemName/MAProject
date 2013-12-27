@@ -1,0 +1,43 @@
+<%@ taglib tagdir="/WEB-INF/tags" prefix="t"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="name" value="complexMap" />
+<c:set var="function" value="resetComplexMap()" />
+<div id="complexMotivationMapBox">
+	<div class="controls">
+		<div class="top">
+			<t:checkbox
+				key="jsp.dashboard.satisfaction"
+				id="${name}satisfaction"
+				onchange="${function}"
+			/>
+			<t:checkbox
+				key="jsp.dashboard.prioritization"
+				id="${name}prioritization"
+				onchange="${function}"
+			/>
+		</div>
+		<div class="bottom">
+			<t:checkbox
+				key="enum.dimension.morale"
+				id="${name}morale"
+				onchange="${function}"
+			/>
+			<t:checkbox
+				key="enum.dimension.career"
+				id="${name}career"
+				onchange="${function}"
+			/>
+			<t:checkbox
+				key="enum.dimension.professional"
+				id="${name}professional"
+				onchange="${function}"
+			/>
+			<t:checkbox
+				key="enum.dimension.compensation"
+				id="${name}compensation"
+				onchange="${function}"
+			/>
+		</div>
+	</div>
+	<div class="canvas" id="complexMotivationMap"></div>
+</div>

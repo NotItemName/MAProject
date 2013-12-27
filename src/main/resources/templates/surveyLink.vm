@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en">
+	<body>
+		<p>Dear ${userName},</p> 
+		<p>Your RM send link to survey "${survey.description[$locale].name}":</p>
+		<a>${url}${survey.link}</a>
+		<p>Thanks</p>
+		_____________________________________________________________________________________<br>	
+        <span style="font-size:8.0pt;color:gray">
+			Please note that this is an unmonitored alias, so please refrain from replying to this e-mail.
+		</span>	 
+	</body>
+</html>

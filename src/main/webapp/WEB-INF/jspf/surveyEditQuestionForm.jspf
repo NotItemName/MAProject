@@ -1,0 +1,49 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<div class="surveyAddQuestionForm" id="surveyEditQuestionForm"
+	style="display: none">
+	<c:forEach var="locale" items="${locales}">
+		<c:set var="text" value="${question.questionText.get(locale)}"></c:set>
+		<div class="doubleColumnBox questionText">
+			<div class="leftColumn">
+				<div class="nameLabel">
+					<fmt:message key="jsp.createSurvey.list.question.label.name" />
+					<div class="languageName">(${locale})</div>
+				</div>
+				<div class="nameInput">
+					<input class="input" type="text" id="editName${locale}"></input>
+				</div>
+				<div class="descriptionLabel">
+					<fmt:message
+						key="jsp.createSurvey.list.question.label.description.satisfaction" />
+					<div class="languageName">(${locale})</div>
+				</div>
+				<div class="descriptionInput">
+					<textarea class="textArea" id="editSatisfactionText${locale}"></textarea>
+				</div>
+			</div>
+			<div class="rightColumn">
+				<div class="nameLabel">&nbsp;</div>
+				<div class="descriptionLabel">
+					<fmt:message
+						key="jsp.createSurvey.list.question.label.description.prioritization" />
+					<div class="languageName">(${locale})</div>
+				</div>
+				<div class="descriptionInput">
+					<textarea class="textArea" id="editPrioritizationText${locale}"></textarea>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</c:forEach>
+
+	<div class="errorMessageBox" style="display: none" id="errorMessageBox"></div>
+
+	<div class="rightAlign">
+		<input class="button" type="button" id="cancelAddQuestionButton"
+			value="<fmt:message key="rm.survey.new.question.button.cancel"/>" />
+		<input class="button" type="button" id="saveAddQuestionButton"
+			value="<fmt:message key="rm.survey.new.question.button.save"/>" />
+	</div>
+</div>

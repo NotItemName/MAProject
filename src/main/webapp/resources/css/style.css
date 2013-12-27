@@ -1,0 +1,260 @@
+/*------------------------------------ our css --------------------*/
+
+.questionWarp {
+	display: block;
+	overflow: hidden;
+	padding: 5px;
+}
+
+.contentBlock {
+	text-align: left;
+	overflow: hidden;
+	margin: 10px;
+	margin-bottom: 25px;	
+	padding: 5px;
+}
+
+.contentLeft {
+	float: left;
+	width: 430px;
+	overflow: hidden;
+}
+
+.contentRight {
+	float: right;
+	width: 430px;
+	overflow: hidden;
+}
+
+.contentLeft div {
+	margin-bottom: 10px;
+}
+
+.contentRight div {
+	margin-bottom: 10px;
+}
+
+.contentRight input#editButton {
+	margin-left: 230px;
+}
+
+.contentRight input#deleteButton {
+	margin-left: 10px;
+}
+
+.surveyHeader {
+	float: left;
+	display: inline;
+	height: 400px;
+	width: 900px;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.surveyHeader {
+	height: 400px;
+}
+
+.error_input{
+	border: 1px solid #FF0000;
+}
+
+body
+{
+background-color:#5B5F53;
+font-family:Arial, Helvetica, sans-serif;
+padding:0;
+font-size:12px;
+margin:0px auto auto auto;
+color:#000000;
+}
+.clear{
+clear:both;
+}
+#wrap{
+width:900px;
+height: auto;
+margin:auto;
+background-color:#FFFFFF;
+}
+/*------------------------------------center content--------------------*/
+.center_content {
+width:900px;
+padding:0px 0 0 0;
+background:url(images/center_bg.gif) repeat-y center;
+}
+.left_content{
+width:490px;
+float:left;
+padding:20px 0 20px 20px;
+}
+.right_content{
+width:370px;
+float:left;
+padding:20px 0 20px 20px;
+}
+.right_box{
+width:170px;
+float:left;
+padding:10px 0 0 0;
+}
+/*-----------------------languages_box---------*/
+.languages_box{
+padding:0 0 5px 0;
+float:left;
+}
+.languages_box a{
+padding:0 2px 0 2px;
+}
+.languages_box a.selected{
+padding:2px 2px 0 2px;
+border:1px #CCCCCC solid;
+}
+div.pagination {
+width:420px;
+padding:5px;
+margin:5px;
+text-align:center;
+float:left;
+clear:both;
+font-size:10px;
+}
+
+div.pagination a {
+padding: 2px 5px 2px 5px;
+margin-right: 2px;
+border: 1px solid #795636;
+text-decoration: none; 
+color: #795636;
+}
+div.pagination a:hover, div.pagination a:active {
+border:1px solid #795636;
+color: #fff;
+background-color: #795636;
+}
+div.pagination span.current {
+padding: 2px 5px 2px 5px;
+margin-right: 2px;
+border: 1px solid #795636;
+font-weight: bold;
+background-color: #795636;
+color: #FFF;
+}
+div.pagination span.disabled {
+padding: 2px 5px 2px 5px;
+margin-right: 2px;
+border: 1px solid #f3f3f3;
+color: #ccc;
+}
+/*---------------footer------------------------*/
+.footer{
+height:100px;
+border-top:1px #b2b2b2 dashed;
+}
+.left_footer{
+float:left;
+padding:10px 0 0 10px;
+}
+.right_footer{
+float:right;
+padding:10px 10px 0 0;
+}
+/*-----------------------------menu-------------------*/
+#menu{
+width:628px;
+height:30px;
+float:right;
+padding:43px 0 0 10px;
+}
+#menu ul{
+display:block;
+list-style:none;
+padding:9px 0 0 10px;
+margin:0px;
+}
+#menu ul li{
+display:inline;
+padding:0px;
+margin:0px;
+height:20px;
+}
+#menu ul li a{
+height:27px;
+display:block;
+padding:0px 10px 0 10px;
+margin:0 4px 0 4px;
+_margin:0 2px 0 2px;
+float:left;
+text-decoration:none;
+text-align:center;
+color:black;
+font-size:13px;
+line-height:25px;
+}
+#menu ul li.selected a{
+height:27px;
+display:block;
+padding:0px 10px 0 10px;
+margin:0 5px 0 5px;
+float:left;
+text-decoration:none;
+text-align:center;
+color:red;
+font-size:13px;
+line-height:25px;
+}
+/*---------------------------------------------*/
+.feat_prod_box_details{
+padding:10px 0 10px 0;
+margin:0 20px 10px 0;
+clear:both;
+}
+.contact_form{
+width:355px;
+float:left;
+padding:25px;
+margin:20px 0 0 15px;
+_margin:20px 0 0 5px;
+border:1px #DFD1D2 dashed;
+position:relative;
+}
+.form_subtitle{
+position:absolute;
+top:-11px;
+left:7px;
+width:auto;
+height:20px;
+background-color:#4E6C4E;
+text-align:center;
+padding:0 7px 0 7px;
+color:#FFFFFF;
+font-size:11px;
+line-height:20px;
+}
+.form_row{
+width:335px;
+_width:355px;
+clear:both;
+padding:10px 0 10px 0;
+_padding:5px 0 5px 0;
+color:#a53d17;
+}
+label.contact{
+width:75px;
+float:left;
+font-size:12px;
+text-align:right;
+padding:4px 5px 0 0;
+color: #333333;
+}
+input.contact_input{
+width:253px;
+height:18px;
+background-color:#fff;
+color:#999999;
+border:1px #DFDFDF solid;
+float:left;
+}
+

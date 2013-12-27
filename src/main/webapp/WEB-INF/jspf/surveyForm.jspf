@@ -1,0 +1,77 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<div class="surveyFormBox">
+	<div class="surveyName">
+		<div class="labels">
+			<c:forEach var="locale" items="${locales}">
+				<div class="label">
+					<fmt:message key="jsp.createSurvey.surveyHeader.label.surveyName" />
+					<div class="languageName">(${locale})</div>
+				</div>
+			</c:forEach>
+		</div>
+		<div class="inputs">
+			<c:forEach var="locale" items="${locales}">
+				<c:set var="text" value="${survey.description.get(locale)}" />
+				<input class="input${not empty survey ? ' disabled' : ''}"
+					id="surveyName${locale}" type="text" value="${text.name}"
+					${not empty survey ? 'disabled="disabled"' : '' } />
+			</c:forEach>
+		</div>
+	</div>
+	<div class="surveyDate">
+		<div class="label">
+			<fmt:message key="jsp.createSurvey.surveyHeader.label.surveyDates" />
+		</div>
+		<input class="input${not empty survey ? ' disabled' : ''}"
+			id="surveyStartDate" type="text"
+			value="${not empty survey ? survey.startDate : 'yyyy-mm-dd'}"
+			readonly="readonly" />
+		<div class="dateSeparator">-</div>
+		<input class="input${not empty survey ? ' disabled' : ''}"
+			id="surveyEndDate" type="text"
+			value="${not empty survey ? survey.endDate : 'yyyy-mm-dd'}"
+			readonly="readonly" />
+	</div>
+	<div class="surveyButtons">
+		<input class="button" id="stopSurveyButton" type="button"
+			${survey.status.name() ne 'IN_PROGRESS' ? 'style="display:none"' : ''}
+			value="<fmt:message key="jsp.createSurvey.surveyHeader.button.stopSurvey"/>"
+			onclick="popupStop()" />
+		
+		<input class="button"  id="cancelSurveyButton" type="button"
+			${(empty survey or survey.status eq 'FINISHED') ? 'style="display:none"' : ''}
+			value="<fmt:message key='jsp.createSurvey.surveyHeader.button.cancelSurvey' />"
+			onclick="popupCancel()" />
+
+		<input class="button" type="button" id="scheduleSurveyButton"
+			${not empty survey ? 'style="display:none"' : ''}
+			value="<fmt:message key="jsp.createSurvey.surveyHeader.button.scheduleSurvey"/>"
+			onclick="scheduleSurvey()" />
+	</div>
+	<div class="surveyStatus"
+		${empty survey.status ? 'style="display:none"' : ''}>
+		<div class="label">
+			<fmt:message key="jsp.createSurvey.surveyHeader.label.surveyStatus" />
+		</div>
+		<div class="value" id="surveyStatus">
+			<fmt:message key="${survey.status.key}" />
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="surveyLink">
+		<div class="label" id="surveyLinkLabel"
+			${empty survey ? 'style="display:none"' : ''}>
+			<fmt:message key="jsp.createSurvey.surveyHeader.label.surveyURL" />
+		</div>
+		<div class="value">
+			<a class="link" href="${survey.link}" id="surveyLink"
+				${empty survey ? 'style="display:none"' : ''}>${url}${survey.link}</a>
+		</div>
+		<input class="button" type="button" id="sendLinkButton"
+			${empty survey ? 'style="display:none"' : ''}
+			value="<fmt:message key="jsp.createSurvey.surveyHeader.button.sendLink"/>"
+			onclick="popupLinkSend()" />
+	</div>
+</div>

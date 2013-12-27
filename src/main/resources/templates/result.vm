@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en">
+	<body>
+		<p>Dear ${userName},<p/> 
+		<p>You have successfully passed survey "${survey.description[$locale].name}".<p/>
+		<p>Your result:<p/>
+		<table>
+			<tr>
+				<td>Question</td>
+			    <td>Satisfaction</td>
+			    <td>Priority</td>
+			<tr>
+			#foreach($result in ${results})
+			<tr>
+				<td>$result.question.questionText[$locale].name</td>
+			    <td>$result.satisfaction</td>
+			    <td>$result.priority</td>
+			<tr>
+			#end
+		</table>
+		
+		<p>Thanks</p>
+		_____________________________________________________________________________________<br>	
+        <span style="font-size:8.0pt;color:gray">
+			Please note that this is an unmonitored alias, so please refrain from replying to this e-mail.
+		</span>	 
+	</body>
+</html>
